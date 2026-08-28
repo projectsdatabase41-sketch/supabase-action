@@ -6,7 +6,7 @@ from datetime import datetime
 
 EMBED_MODEL = "openai/text-embedding-3-large"
 TARGET_DIM = 2000
-TEXT_LIMIT = 1500
+TEXT_LIMIT = 8000 
 LIMIT = 50
 
 OR_KEY = os.getenv("OPENAI_API_KEY")
@@ -44,7 +44,11 @@ def gen_emb(text):
     r = requests.post(
         "https://openrouter.ai/api/v1/embeddings",
         headers={"Authorization": "Bearer " + OR_KEY, "Content-Type": "application/json"},
-        json={"model": EMBED_MODEL, "input": text[:TEXT_LIMIT]},
+        json={
+            "model": EMBED_MODEL,
+            "input": text[:TEXT_LIMIT],
+            "dimensions": TARGET_DIM   # режем 3072 → 2000
+        },
         timeout=45
     )
     if r.status_code != 200:
