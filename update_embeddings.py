@@ -6,7 +6,7 @@ from datetime import datetime
 
 EMBED_MODEL = "openai/text-embedding-3-large"
 TARGET_DIM = 2000
-TEXT_LIMIT = 8000 
+TEXT_LIMIT = 8000
 LIMIT = 50
 
 OR_KEY = os.getenv("OPENAI_API_KEY")
@@ -38,17 +38,31 @@ TABLES = [
 def hdr(key):
     return {"apikey": key, "Authorization": "Bearer " + key, "Content-Type": "application/json"}
 
+def is_empty(t):
+    r = requests.get(t["url"] + "/" + t["name"], headers=hdr(t["key"]),
+                     params={"select": "id", "limit": 1}, timeout=30)
+    return r.status_code != 200 or not r.json()
+
+def detect(t):
+    cols = set()
+    r = requests.get(t["url"] + "/", headers=hdr(t["key"]), timeout=30)
+    if r.status_code == 200:
+        spec = r.json()
+        cols = set(spec.get("definitions", {}).get(t["name"], {}).get("properties", {}).keys())
+    if isinstance(t["text_fields"], list):
+        fields = [f for f in t["text_fields"] if f in cols] if cols else t["text_fields"]
+    else:
+        fields = [f for f in CANDIDATE_FIELDS if f in cols]
+        print("Авто-поля: " + str(fields))
+    return fields, cols
+
 def gen_emb(text):
     if not text.strip():
         return None
     r = requests.post(
         "https://openrouter.ai/api/v1/embeddings",
         headers={"Authorization": "Bearer " + OR_KEY, "Content-Type": "application/json"},
-        json={
-            "model": EMBED_MODEL,
-            "input": text[:TEXT_LIMIT],
-            "dimensions": TARGET_DIM   # режем 3072 → 2000
-        },
+        json={"model": EMBED_MODEL, "input": text[:TEXT_LIMIT], "dimensions": TARGET_DIM},
         timeout=45
     )
     if r.status_code != 200:
@@ -60,17 +74,6 @@ def gen_emb(text):
     elif len(emb) < TARGET_DIM:
         emb = emb + [0.0] * (TARGET_DIM - len(emb))
     return emb
-
-def detect(t):
-    r = requests.get(t["url"] + "/" + t["name"], headers=hdr(t["key"]),
-                     params={"limit": 1}, timeout=30)
-    cols = set(r.json()[0].keys()) if r.status_code == 200 and r.json() else set()
-    if isinstance(t["text_fields"], list):
-        fields = [f for f in t["text_fields"] if f in cols] if cols else t["text_fields"]
-    else:
-        fields = [f for f in CANDIDATE_FIELDS if f in cols]
-        print("Авто-поля: " + str(fields) + " (колонки: " + str(sorted(cols)) + ")")
-    return fields, cols
 
 def get_rows(t, fields, cols):
     rows = []
@@ -115,6 +118,9 @@ def main():
         return
     for t in TABLES:
         print("\n=== " + t["name"] + " ===")
+        if is_empty(t):
+            print("Таблица пустая — скип")
+            continue
         fields, cols = detect(t)
         if not fields or "embedding" not in cols:
             print("Нет текстовых полей или embedding — скип")
