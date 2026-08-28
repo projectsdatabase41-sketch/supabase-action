@@ -7,7 +7,7 @@ from datetime import datetime
 EMBED_MODEL = "openai/text-embedding-3-large"
 TARGET_DIM = 2000
 TEXT_LIMIT = 8000
-LIMIT = 50
+LIMIT = 150
 
 OR_KEY = os.getenv("OPENAI_API_KEY")
 URL_MY = os.getenv("SUPABASE_URL_MY")
