@@ -1,0 +1,29 @@
+name: Update Embeddings (text-embedding-3-large)
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: pip install requests openai
+        
+      - name: Run Embeddings Updater
+        env:
+          SUPABASE_URL_MY: ${{ secrets.SUPABASE_URL_MY }}
+          SUPABASE_KEY_MY: ${{ secrets.SUPABASE_KEY_MY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_KEY_MY: ${{ secrets.OPENROUTER_KEY_MY }}
+        run: python update_embeddings.py
