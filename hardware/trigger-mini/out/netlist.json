@@ -1,0 +1,1256 @@
+{
+ "version": "1.2",
+ "parts": {
+  "D1": {
+   "val": "SS14",
+   "fp": "SMA",
+   "lcsc": "C2480",
+   "note": "защита от переполюсовки",
+   "flags": []
+  },
+  "C1": {
+   "val": "10uF X7R 10V",
+   "fp": "0603",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "C2": {
+   "val": "10uF X7R 10V",
+   "fp": "0603",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "C4": {
+   "val": "47uF 10V polymer/tantalum low-profile",
+   "fp": "tbd",
+   "lcsc": "",
+   "note": "вход boost, буфер на пик соленоида",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "U1": {
+   "val": "MT3608",
+   "fp": "SOT-23-6",
+   "lcsc": "C84817",
+   "note": "",
+   "flags": []
+  },
+  "L1": {
+   "val": "4.7uH shielded Isat>2A",
+   "fp": "4x4",
+   "lcsc": "",
+   "note": "между VBAT_SW и SW (ИСПРАВЛЕНО: в v1.1 стоял последовательно с D3)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "D3": {
+   "val": "SS14",
+   "fp": "SMA",
+   "lcsc": "C2480",
+   "note": "",
+   "flags": []
+  },
+  "R3": {
+   "val": "187k 1%",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "FB-делитель: 0.6*(1+187/10)=11.82 В",
+   "flags": []
+  },
+  "R4": {
+   "val": "10k 1%",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "C6": {
+   "val": "22uF 25V polymer/tantalum low-profile",
+   "fp": "tbd",
+   "lcsc": "",
+   "note": "выход boost",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C7": {
+   "val": "100nF X7R 25V",
+   "fp": "0603",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "Q1": {
+   "val": "SI2302",
+   "fp": "SOT-23-3",
+   "lcsc": "C351399",
+   "note": "ключ соленоида (Vgs max 8 В)",
+   "flags": []
+  },
+  "D2": {
+   "val": "SS14",
+   "fp": "SMA",
+   "lcsc": "C2480",
+   "note": "flyback",
+   "flags": []
+  },
+  "R7": {
+   "val": "10k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "fail-safe подтяжка GATE, менять запрещено",
+   "flags": []
+  },
+  "U2": {
+   "val": "TLC555IDR",
+   "fp": "SOIC-8",
+   "lcsc": "C6987",
+   "note": "",
+   "flags": []
+  },
+  "R9": {
+   "val": "100k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "POR",
+   "flags": []
+  },
+  "C8": {
+   "val": "1uF X7R",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "R6": {
+   "val": "220",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "R1": {
+   "val": "1k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "фильтр тракта срыва — топология предположительная (A1)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C3": {
+   "val": "100nF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "фильтр тракта срыва (A1)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "R5": {
+   "val": "10k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "подтяжка контакта спуска",
+   "flags": []
+  },
+  "R11": {
+   "val": "1M",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "R12": {
+   "val": "220k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "RT: 1.1*220k*100n=24.2 мс. ЗНАЧЕНИЕ ПРЕДПОЛОЖЕНО (A2)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C9": {
+   "val": "100nF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "CT (A2)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C5": {
+   "val": "10nF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "CONTROL, стандартная обвязка 555 (A3)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C23": {
+   "val": "100nF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "блокировочный VCC555, добавлен в v1.2",
+   "flags": []
+  },
+  "U5": {
+   "val": "ATtiny1616-MNR",
+   "fp": "QFN-20 3x3",
+   "lcsc": "C507118",
+   "note": "",
+   "flags": []
+  },
+  "C10": {
+   "val": "1uF X7R",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "C11": {
+   "val": "100nF X7R",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "R10": {
+   "val": "1M",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "v1.2: 10k -> 1M (ограничение фантомного тока через клампы МК)",
+   "flags": []
+  },
+  "R16": {
+   "val": "220k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "v1.2: bleeder V2PWR — не даёт V2PWR всплывать в положении I",
+   "flags": []
+  },
+  "R13": {
+   "val": "1M",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "ADC делитель",
+   "flags": []
+  },
+  "R14": {
+   "val": "1M",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "ADC делитель",
+   "flags": []
+  },
+  "C12": {
+   "val": "100nF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "узел делителя, sample&hold",
+   "flags": []
+  },
+  "R15": {
+   "val": "220",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "R_MG",
+   "flags": []
+  },
+  "R17": {
+   "val": "100k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "v1.2: pull-down узла SENSE (был 10k)",
+   "flags": []
+  },
+  "R18": {
+   "val": "10k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "nRF TX -> МК RX",
+   "flags": []
+  },
+  "R19": {
+   "val": "10k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "МК TX -> nRF RX",
+   "flags": []
+  },
+  "SW1": {
+   "val": "TACT 4x4",
+   "fp": "SMD",
+   "lcsc": "",
+   "note": "MODE",
+   "flags": []
+  },
+  "Q3": {
+   "val": "AO3401A",
+   "fp": "SOT-23-3",
+   "lcsc": "C15127",
+   "note": "P-МОП: Source=VCC_IN (12 В)",
+   "flags": []
+  },
+  "Q4": {
+   "val": "SI2302",
+   "fp": "SOT-23-3",
+   "lcsc": "C351399",
+   "note": "v1.2: N-МОП, драйвер затвора Q3; открывается только при V2PWR на ключе",
+   "flags": []
+  },
+  "R20": {
+   "val": "100k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "R_UP: исток Q3 -> затвор",
+   "flags": []
+  },
+  "R21": {
+   "val": "47k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "R_DN: затвор Q3 -> сток Q4. Vgs(Q3)=-12*100/147=-8.2 В",
+   "flags": []
+  },
+  "U3": {
+   "val": "AP63203WU-7 (3.3 В buck, Vin 3.8-32 В)",
+   "fp": "TSOT-26",
+   "lcsc": "",
+   "note": "v1.2: ЗАМЕНА ME6211C33 (Vin max 6.5 В < 12 В!). Пины/L/Cboot сверить с даташитом",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "L2": {
+   "val": "10uH shielded Isat>=1.5A",
+   "fp": "4x4",
+   "lcsc": "",
+   "note": "по даташиту U3",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C13": {
+   "val": "100nF X7R 25V",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "Cboot",
+   "flags": []
+  },
+  "C14": {
+   "val": "10uF X7R 25V",
+   "fp": "0805",
+   "lcsc": "",
+   "note": "Cin buck",
+   "flags": []
+  },
+  "C15": {
+   "val": "22uF X5R 10V",
+   "fp": "0805",
+   "lcsc": "",
+   "note": "Cout buck",
+   "flags": []
+  },
+  "R22": {
+   "val": "100k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "EN U3 <- VIN (токоограничение)",
+   "flags": []
+  },
+  "R23": {
+   "val": "100k",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "v1.2: bleeder V3V3 — гарантирует ~0 В в MATCH при любых утечках UART",
+   "flags": []
+  },
+  "U4": {
+   "val": "ME6211C18M5G-N",
+   "fp": "SOT-23-5",
+   "lcsc": "C236671",
+   "note": "Vin 3.3 В — в пределах 6.5 В",
+   "flags": []
+  },
+  "C16": {
+   "val": "1uF X7R",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "C17": {
+   "val": "1uF X7R",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "",
+   "flags": []
+  },
+  "U6": {
+   "val": "nRF52811-QCAA-R",
+   "fp": "QFN-32 5x5",
+   "lcsc": "C559461",
+   "note": "DEC/DCC обвязка — по референсу Nordic (TBD)",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "Y1": {
+   "val": "NX1612SA-32MHZ",
+   "fp": "1612-4P",
+   "lcsc": "C910049",
+   "note": "",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C21": {
+   "val": "12pF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "нагрузочный, по даташиту кристалла",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "C22": {
+   "val": "12pF",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "нагрузочный, по даташиту кристалла",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "J1": {
+   "val": "U.FL-R-SMT-1(10)",
+   "fp": "SMD",
+   "lcsc": "C88373",
+   "note": "проверить сборку JLC",
+   "flags": []
+  },
+  "MATCH": {
+   "val": "pi-match L/C/C (TBD)",
+   "fp": "0402",
+   "lcsc": "",
+   "note": "по референсу Nordic",
+   "flags": [
+    "tbd"
+   ]
+  },
+  "P_BATP": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_BATN": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWA1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWA2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWB1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWB2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWC1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWC2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_R6OUT": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_MG": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_GATE": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SF1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SF2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SOLA": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SOLB": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_VCCIN": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_S_V3V3": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_S_V1V8": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_S_GND": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SDA": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SCL": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_HXSCK": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_HXDOUT": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_PPGINT": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_BMIINT": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_RSV": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_V_V3V3": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_V_GND": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_VIBEN": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_UPDI": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_PV2PWR": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_PGND1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWDIO": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_SWDCLK": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_NRST": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_PV3V3": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_PGND2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_KEYCOM": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_KEYSENSE": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT3": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT4": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT5": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_AT6": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_NRF1": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_NRF2": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_NRF3": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_NRF4": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_XV2PWR": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  },
+  "P_XGND": {
+   "val": "pad",
+   "fp": "pad",
+   "lcsc": "",
+   "note": "",
+   "flags": [
+    "pad"
+   ]
+  }
+ },
+ "nets": {
+  "GND": [
+   "C1.2",
+   "C2.2",
+   "C4.2",
+   "U1.GND",
+   "R4.2",
+   "C6.2",
+   "C7.2",
+   "Q1.S",
+   "R7.2",
+   "R5.2",
+   "C3.2",
+   "C8.2",
+   "C5.2",
+   "C9.2",
+   "C23.2",
+   "U2.GND",
+   "C10.2",
+   "C11.2",
+   "U5.GND",
+   "R14.2",
+   "C12.2",
+   "R17.2",
+   "Q4.S",
+   "SW1.2",
+   "C14.2",
+   "C15.2",
+   "U3.GND",
+   "R23.2",
+   "U4.GND",
+   "C16.2",
+   "C17.2",
+   "U6.GND",
+   "Y1.2",
+   "Y1.4",
+   "C21.2",
+   "C22.2",
+   "J1.GND",
+   "R11.2",
+   "R16.2",
+   "P_BATN.1",
+   "P_S_GND.1",
+   "P_V_GND.1",
+   "P_PGND1.1",
+   "P_PGND2.1",
+   "P_XGND.1"
+  ],
+  "BAT_P": [
+   "D1.A",
+   "P_BATP.1"
+  ],
+  "VBAT_D": [
+   "D1.K",
+   "P_SWA1.1"
+  ],
+  "VBAT_SW": [
+   "C1.1",
+   "C2.1",
+   "C4.1",
+   "U1.IN",
+   "U1.EN",
+   "L1.1",
+   "P_SWA2.1",
+   "P_SWB1.1",
+   "P_SWC1.1",
+   "P_SF2.1"
+  ],
+  "SW": [
+   "U1.SW",
+   "L1.2",
+   "D3.A"
+  ],
+  "VCC_IN": [
+   "D3.K",
+   "C6.1",
+   "C7.1",
+   "R3.1",
+   "Q3.S",
+   "R20.1",
+   "D2.K",
+   "P_SOLB.1",
+   "P_VCCIN.1"
+  ],
+  "FB": [
+   "U1.FB",
+   "R3.2",
+   "R4.1"
+  ],
+  "SOL_A": [
+   "Q1.D",
+   "D2.A",
+   "P_SOLA.1"
+  ],
+  "GATE": [
+   "Q1.G",
+   "R7.1",
+   "P_GATE.1"
+  ],
+  "U2_OUT": [
+   "U2.OUT",
+   "R6.1"
+  ],
+  "R6_OUT": [
+   "R6.2",
+   "P_R6OUT.1"
+  ],
+  "VCC555": [
+   "U2.VDD",
+   "R9.1",
+   "R12.1",
+   "R11.1",
+   "C23.1",
+   "P_SWB2.1"
+  ],
+  "TSG": [
+   "R5.1",
+   "R1.1",
+   "R10.1",
+   "P_SF1.1"
+  ],
+  "TRIG": [
+   "R1.2",
+   "C3.1",
+   "U2.TRIG"
+  ],
+  "U2_RESET": [
+   "R9.2",
+   "C8.1",
+   "U2.RESET"
+  ],
+  "U2_CONT": [
+   "C5.1",
+   "U2.CONT"
+  ],
+  "U2_TIMING": [
+   "R12.2",
+   "C9.1",
+   "U2.THRES",
+   "U2.DISCH"
+  ],
+  "TSG_MOD": [
+   "R10.2",
+   "U5.PA6"
+  ],
+  "V2PWR": [
+   "U5.VDD",
+   "C10.1",
+   "C11.1",
+   "R13.1",
+   "R16.1",
+   "P_SWC2.1",
+   "P_PV2PWR.1",
+   "P_KEYCOM.1",
+   "P_XV2PWR.1"
+  ],
+  "VBAT_ADC": [
+   "R13.2",
+   "R14.1",
+   "C12.1",
+   "U5.PA2"
+  ],
+  "MG_OUT": [
+   "U5.PB0",
+   "R15.1"
+  ],
+  "MG": [
+   "R15.2",
+   "P_MG.1"
+  ],
+  "SENSE": [
+   "R17.1",
+   "U5.PA7",
+   "Q4.G",
+   "P_KEYSENSE.1"
+  ],
+  "G3": [
+   "Q3.G",
+   "R20.2",
+   "R21.1"
+  ],
+  "Q4D": [
+   "R21.2",
+   "Q4.D"
+  ],
+  "V12_SW": [
+   "Q3.D",
+   "C14.1",
+   "U3.VIN",
+   "R22.1"
+  ],
+  "U3_EN": [
+   "R22.2",
+   "U3.EN"
+  ],
+  "BUCK_SW": [
+   "U3.SW",
+   "L2.1",
+   "C13.1"
+  ],
+  "BUCK_BST": [
+   "C13.2",
+   "U3.BST"
+  ],
+  "V3V3": [
+   "L2.2",
+   "U3.FB",
+   "C15.1",
+   "U4.VIN",
+   "U4.CE",
+   "C16.1",
+   "R23.1",
+   "U6.VDD",
+   "P_PV3V3.1",
+   "P_S_V3V3.1",
+   "P_V_V3V3.1"
+  ],
+  "V1V8": [
+   "U4.VOUT",
+   "C17.1",
+   "P_S_V1V8.1"
+  ],
+  "MODE": [
+   "U5.PA4",
+   "SW1.1"
+  ],
+  "UPDI": [
+   "U5.PA0",
+   "P_UPDI.1"
+  ],
+  "UART_TX_AT": [
+   "U5.PB2",
+   "R19.1"
+  ],
+  "UART_RX_NRF": [
+   "R19.2",
+   "U6.UART_RX"
+  ],
+  "UART_TX_NRF": [
+   "U6.UART_TX",
+   "R18.1"
+  ],
+  "UART_RX_AT": [
+   "R18.2",
+   "U5.PB3"
+  ],
+  "AT_SPARE1": [
+   "U5.PA1",
+   "P_AT1.1"
+  ],
+  "AT_SPARE2": [
+   "U5.PA3",
+   "P_AT2.1"
+  ],
+  "AT_SPARE3": [
+   "U5.PA5",
+   "P_AT3.1"
+  ],
+  "AT_SPARE4": [
+   "U5.PB1",
+   "P_AT4.1"
+  ],
+  "AT_SPARE5": [
+   "U5.PB4",
+   "P_AT5.1"
+  ],
+  "AT_SPARE6": [
+   "U5.PB5",
+   "P_AT6.1"
+  ],
+  "SDA": [
+   "U6.SDA",
+   "P_SDA.1"
+  ],
+  "SCL": [
+   "U6.SCL",
+   "P_SCL.1"
+  ],
+  "HX_SCK": [
+   "U6.HX_SCK",
+   "P_HXSCK.1"
+  ],
+  "HX_DOUT": [
+   "U6.HX_DOUT",
+   "P_HXDOUT.1"
+  ],
+  "PPG_INT": [
+   "U6.PPG_INT",
+   "P_PPGINT.1"
+  ],
+  "BMI_INT": [
+   "U6.BMI_INT",
+   "P_BMIINT.1"
+  ],
+  "RSV": [
+   "U6.RSV",
+   "P_RSV.1"
+  ],
+  "VIBRO_EN": [
+   "U6.VIBRO_EN",
+   "P_VIBEN.1"
+  ],
+  "SWDIO": [
+   "U6.SWDIO",
+   "P_SWDIO.1"
+  ],
+  "SWDCLK": [
+   "U6.SWDCLK",
+   "P_SWDCLK.1"
+  ],
+  "NRST": [
+   "U6.NRESET",
+   "P_NRST.1"
+  ],
+  "NRF_SPARE1": [
+   "U6.SPARE1",
+   "P_NRF1.1"
+  ],
+  "NRF_SPARE2": [
+   "U6.SPARE2",
+   "P_NRF2.1"
+  ],
+  "NRF_SPARE3": [
+   "U6.SPARE3",
+   "P_NRF3.1"
+  ],
+  "NRF_SPARE4": [
+   "U6.SPARE4",
+   "P_NRF4.1"
+  ],
+  "XTAL1": [
+   "U6.XC1",
+   "Y1.1",
+   "C21.1"
+  ],
+  "XTAL2": [
+   "U6.XC2",
+   "Y1.3",
+   "C22.1"
+  ],
+  "ANT_RAW": [
+   "U6.ANT",
+   "MATCH.1"
+  ],
+  "ANT_J": [
+   "MATCH.2",
+   "J1.SIG"
+  ]
+ }
+}
